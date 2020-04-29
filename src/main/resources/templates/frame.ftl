@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/css/back-to-top.css">
     <link rel="stylesheet" href="/css/progressbar.css">
     <link rel="stylesheet" href="/css/player.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
     <#if action == actions.ARTICLE>
     <link rel="stylesheet" href="/editor.md/css/editormd.preview.css" />
     </#if>
@@ -337,6 +338,7 @@
 <script src="/js/main.js"></script>
 <script src="/js/clipboard.min.js"></script>
 <script src="/js/player.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 <script type="text/javascript">
     function doSearch() {
         window.open("${actions.SEARCH + "/"}" + $(".search-input").val(), "_self");
