@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/css/back-to-top.css">
     <link rel="stylesheet" href="/css/progressbar.css">
     <link rel="stylesheet" href="/css/player.css">
+    <link rel="stylesheet" href="/css/jquery.marquee.css">
     <#if action == actions.ARTICLE>
     <link rel="stylesheet" href="/editor.md/css/editormd.preview.css" />
     </#if>
@@ -336,6 +337,7 @@
 <script src="/js/pace.min.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/clipboard.min.js"></script>
+<script src="/js/jquery.marquee.min.js"></script>
 <script src="/js/player.js"></script>
 <script type="text/javascript">
     function doSearch() {

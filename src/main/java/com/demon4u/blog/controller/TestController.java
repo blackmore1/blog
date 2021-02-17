@@ -1,6 +1,7 @@
 package com.demon4u.blog.controller;
 
 import com.demon4u.blog.dao.ArticleDao;
+import com.demon4u.blog.dto.ResponseDto;
 import com.demon4u.blog.entity.ArticleEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -41,5 +42,12 @@ public class TestController {
     @PreAuthorize("hasRole('ROLE_USER')")
     public String printUser() {
         return "如果你看见这句话，说明你有ROLE_USER角色";
+    }
+
+    @RequestMapping("/rfdTest")
+    public ResponseDto test1(String str) {
+        ResponseDto dto = new ResponseDto();
+        dto.setMsg(str);
+        return dto;
     }
 }

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class GlobalExceptionHandler {
     private static final Logger LOGGER = LogUtil.getErrorLog();
     @Autowired

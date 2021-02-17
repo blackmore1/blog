@@ -36,6 +36,7 @@ import org.springframework.security.web.authentication.rememberme.JdbcTokenRepos
 import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.security.web.firewall.StrictHttpFirewall;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.filter.CompositeFilter;
 
@@ -106,6 +107,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         // 设置拦截忽略文件夹，可以对静态资源放行
         web.ignoring().antMatchers("/css/**", "/js/**");
+        StrictHttpFirewall firewall = new StrictHttpFirewall();
+        //去掉";"黑名单
+        firewall.setAllowSemicolon(true);
+        //加入自定义的防火墙
+        web.httpFirewall(firewall);
+        super.configure(web);
     }
     /**
      * 持久化token

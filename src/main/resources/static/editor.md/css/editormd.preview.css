@@ -3341,6 +3341,7 @@ li.L8 {
   border: none;
   background: none;
   padding: 0;
+  white-space: nowrap;
 }
 
 .editormd-preview-container .editormd-toc-menu, .editormd-html-preview .editormd-toc-menu {
