@@ -1,4 +1,4 @@
-<div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
     <#if indexType??>
         <div class="card" style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top;">
             <div class="card-content">
