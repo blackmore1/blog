@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
-//@Controller
+@Controller
 public class ExceptionController implements ErrorController {
 
 
