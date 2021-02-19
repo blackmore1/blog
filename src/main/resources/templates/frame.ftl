@@ -97,7 +97,7 @@
             </#if>
 
 
-            <div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+            <div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left">
             <#--关注我-->
                 <div class="card widget"
                      style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top 0px;">
@@ -233,7 +233,7 @@
                 </div>
             </div>
 
-            <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-desktop-only has-order-3 column-right ">
+            <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-desktop-only has-order-3 column-right">
                 <div class="card widget"
                      style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top 0px;">
                     <div class="card-content">
