@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,7 +46,7 @@ public class TestController {
     }
 
     @RequestMapping("/rfdTest")
-    public ResponseDto test1(String str) {
+    public ResponseDto test1(String str, @RequestParam("i") int f) {
         ResponseDto dto = new ResponseDto();
         dto.setMsg(str);
         return dto;

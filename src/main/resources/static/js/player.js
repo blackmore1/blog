@@ -63,6 +63,8 @@
 	}
 
 	var play = function(){
+		//设置音量为0.3
+		audio.volume = 0.3;
 		audio.play();
 		if (isRotate) {
 			$("#player .cover img").css("animation","9.8s linear 0s normal none infinite rotate");

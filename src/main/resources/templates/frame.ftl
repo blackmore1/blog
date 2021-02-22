@@ -46,7 +46,7 @@
      style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform: translateY(0px);">
     <div class="container">
         <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="http://vv.demon4u.com/">
+            <a class="navbar-item navbar-logo" href="/">
                 <img src="/images/logo.png" alt="Hexo" height="28">
             </a>
         </div>
@@ -55,7 +55,7 @@
                 <a class="navbar-item <#if action==actions.INDEX>is-active</#if>" href="/">Home</a>
                 <a class="navbar-item <#if action==actions.ARCHIVES>is-active</#if>" href="${actions.ARCHIVES}">Archives</a>
                 <a class="navbar-item <#if action==actions.TAGS>is-active</#if>" href="${actions.TAGS}">Tags</a>
-                <a class="navbar-item" href="http://vv.demon4u.com/about">About</a>
+                <a class="navbar-item" href="/about">About</a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item searchDiv" style="display: none">
@@ -168,7 +168,7 @@
                                 <i class="fab fa-dribbble"></i>
                             </a>
                             <a class="level-item button is-white is-marginless" target="_blank" title="RSS"
-                               href="http://vv.demon4u.com/">
+                               href="/">
                                 <i class="fas fa-rss"></i>
                             </a>
                         </div>
@@ -212,6 +212,27 @@
                     <div class="card-content">
                         <div class="menu">
                             <h3 class="menu-label">
+                                标签
+                            </h3>
+                            <div class="field is-grouped is-grouped-multiline">
+                                <#list tags.keySet() as tag>
+                                    <div class="control">
+                                        <a class="tags has-addons" href="${actions.TAGS + "/" + tag}">
+                                            <span class="tag">${tag}</span>
+                                            <span class="tag is-grey">${tags[tag]}</span>
+                                        </a>
+                                    </div>
+                                </#list>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card widget"
+                     style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top 0px;">
+                    <div class="card-content">
+                        <div class="menu">
+                            <h3 class="menu-label">
                                 归档
                             </h3>
                             <ul class="menu-list">
@@ -244,7 +265,7 @@
                             <article class="media">
                                 <a href="${actions.ARTICLE + "/" + article.id}" class="media-left">
                                     <p class="image is-64x64">
-                                        <img class="thumbnail" src="/images/thumbnail.svg" alt="test9">
+                                        <img class="thumbnail" src="${article.picture}" alt="test9">
                                     </p>
                                 </a>
                                 <div class="media-content">
@@ -267,21 +288,30 @@
                 <div class="card widget"
                      style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s; opacity: 1; transform-origin: center top 0px;">
                     <div class="card-content">
-                        <div class="menu">
-                            <h3 class="menu-label">
-                                标签
-                            </h3>
-                            <div class="field is-grouped is-grouped-multiline">
-                                <#list tags.keySet() as tag>
-                                <div class="control">
-                                    <a class="tags has-addons" href="${actions.TAGS + "/" + tag}">
-                                        <span class="tag">${tag}</span>
-                                        <span class="tag is-grey">${tags[tag]}</span>
-                                    </a>
+                        <h3 class="menu-label">
+                            最新文章
+                        </h3>
+                        <#list latestArticles as article>
+                            <article class="media">
+                                <a href="${actions.ARTICLE + "/" + article.id}" class="media-left">
+                                    <p class="image is-64x64">
+                                        <img class="thumbnail" src="${article.picture}" alt="test9">
+                                    </p>
+                                </a>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <div>
+                                            <time class="has-text-grey is-size-7 is-uppercase">${article.publishDate}
+                                            </time>
+                                        </div>
+                                        <a href="${actions.ARTICLE + "/" + article.id}"
+                                           class="title has-link-black-ter is-size-6 has-text-weight-normal">${article.title}</a>
+                                        <p class="is-size-7 is-uppercase">
+                                        </p>
+                                    </div>
                                 </div>
-                                </#list>
-                            </div>
-                        </div>
+                            </article>
+                        </#list>
                     </div>
                 </div>
             </div>
@@ -292,7 +322,7 @@
     <div class="container">
         <div class="level">
             <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="http://vv.demon4u.com/">
+                <a class="footer-logo is-block has-mb-6" href="/">
                     <img src="/images/logo.png" alt="Hexo" height="28">
                 </a>
                 <p class="is-size-7">

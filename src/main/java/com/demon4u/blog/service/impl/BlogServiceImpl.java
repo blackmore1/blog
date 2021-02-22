@@ -54,6 +54,9 @@ public class BlogServiceImpl implements BlogService {
         Pageable pageable = PageRequest.of(0, 5, Sort.by("clickCount").descending());
         Page<ArticleEntity> page = articleDao.findAll(pageable);
         mv.addObject("popularArticles", page.getContent());
+        pageable = PageRequest.of(0, 5, Sort.by("id").descending());
+        page = articleDao.findAll(pageable);
+        mv.addObject("latestArticles", page.getContent());
         mv.addObject("tags", CollectionUtil.ListRowToMap(articleDao.findGroupByWord()));
         mv.addObject("archives", CollectionUtil.ListRowToMap(articleDao.findGroupByPublishDate()));
         mv.addObject("totalArticles", articleDao.count());

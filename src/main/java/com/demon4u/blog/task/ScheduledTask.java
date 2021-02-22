@@ -1,5 +1,6 @@
 package com.demon4u.blog.task;
 
+import com.demon4u.blog.service.SearchEngineService;
 import com.demon4u.blog.util.DateUtil;
 import com.demon4u.blog.util.IpCheckUtil;
 import com.demon4u.blog.util.LogUtil;
@@ -16,6 +17,8 @@ import java.util.Date;
 @EnableScheduling
 public class ScheduledTask {
     private static final Logger LOGGER = LogUtil.getCommonLog();
+    @Autowired
+    private SearchEngineService searchEngineService;
     /**
      * 一分钟一次
      * */
@@ -31,6 +34,9 @@ public class ScheduledTask {
     @Scheduled(cron = "0 0 * * * ?")
     public void houtTask() {
         IpCheckUtil.IP_COUNT_HOUR.clear();
+
+        // 更新bitmap
+        searchEngineService.buildSitemap();
     }
 
     @Autowired
