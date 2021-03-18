@@ -22,6 +22,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,6 +37,7 @@ import java.util.List;
 @Controller()
 @RequestMapping("/admin")
 @PreAuthorize("hasRole('ROLE_ADMIN')")
+@Transactional
 public class AdminController {
     @Autowired
     private ArticleDao articleDao;

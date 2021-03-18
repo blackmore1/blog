@@ -35,7 +35,7 @@ public class SearchEngineServiceImpl implements SearchEngineService, Initializin
         Page<ArticleEntity> page = articleDao.findAll(pageable);
         List<ArticleEntity> articles = page.getContent();
         Document document = DocumentHelper.createDocument();
-        Element urlsetElement = document.addElement("urlset");
+        Element urlsetElement = document.addElement("urlset", "http://www.sitemaps.org/schemas/sitemap/0.9");
         for (ArticleEntity entity : articles) {
             Element urlElement = urlsetElement.addElement("url");
             urlElement.addElement("loc").setText(AppConfig.domain + UriConstant.ARTICLE + "/" + entity.getId());

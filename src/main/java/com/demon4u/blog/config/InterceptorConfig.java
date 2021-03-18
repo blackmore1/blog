@@ -19,8 +19,19 @@ public class InterceptorConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(timeInterceptor).excludePathPatterns(Arrays.asList("/css/**", "/editor.md/**",
-				"/js/**", "/images/**", "/webfonts/**", "/X-admin/**", "/**/*.ico"));
+				"/js/**", "/images/**", "/webfonts/**", "/X-admin/**", "/**/*.ico", AppConfig.FILE_STATIC_PATH + "/**", AppConfig.PREVIEW_URL + "/**", AppConfig.DOWNLOAD_PRE + "/**"));
 		WebMvcConfigurer.super.addInterceptors(registry);
+	}
+
+	/**
+	 * 添加外部资源
+	 * */
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		//addResourceHandler是指你想在url请求的路径
+		//addResourceLocations是图片存放的真实路径 末尾必须有/
+		String location = "file:" + AppConfig.globalPath + (AppConfig.globalPath.endsWith("/") ? "" : "/");
+		registry.addResourceHandler(AppConfig.DOWNLOAD_PRE +"/**").addResourceLocations(location);
 	}
 
 }

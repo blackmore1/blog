@@ -1,0 +1,72 @@
+html,body,div,p,ol,ul,li,dl,dt,dd,em,i,span,a,img,input,h1,h2,h3,h4,h5,header,section,button{
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+
+a,img,input,button{
+    border: none;
+    outline:none;
+}
+body {
+    font-family:  -apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+a,img,button,input{
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent
+}
+ol,ul,li {
+    list-style: none
+}
+.clearfix:after{
+    content: '';
+    overflow: hidden;
+    line-height: 0;
+    height: 0;
+    display: block;
+    clear: both;
+}
+.clearfix{
+    zoom: 1;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.pl{
+    padding-left: 10px;
+}
+.pr{
+    padding-right: 10px;
+}
+.gray{
+    color: #b2b2b2;
+}
+.bold{
+    font-weight: bold;
+}
+.iconfont{
+  line-height: 1;
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+.flex1{
+  flex: 1;
+}
+.flex2{
+  flex: 2;
+}
+.flex3{
+  flex: 3;
+}
+.flex4{
+  flex: 4;
+}
